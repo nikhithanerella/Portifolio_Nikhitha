@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Contact Nikhitha</title>
+    <style>
+      /* General Body and Form Styling */
+      body {
+        background-color: #f4f6f9;
+        font-family: 'Arial', sans-serif;
+      }
+
+      .navbar {
+        background-color: #343a40;
+        padding: 1rem 2rem;
+        border-bottom: 2px solid #FF5733;
+      }
+
+      .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #FF5733 !important;
+      }
+
+      .navbar-nav .nav-link {
+        color: #ffffff !important;
+        font-size: 1.1rem;
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #FF5733 !important;
+      }
+
+      .alert {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        background-color: #d4edda;
+        color: #155724;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #343a40;
+        margin-bottom: 30px;
+      }
+
+      .form-label {
+        font-weight: bold;
+        color: #343a40;
+      }
+
+      .form-control {
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      footer {
+        background-color: #343a40;
+        color: #ffffff;
+        text-align: center;
+        padding: 15px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .form-select {
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn {
+        border-radius: 20px;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: #FF5733;
+        border: none;
+      }
+
+      .btn:hover {
+        background-color: #e74c3c;
+        transition: 0.3s;
+      }
+
+      /* Responsiveness */
+      @media (max-width: 768px) {
+        .form-control, .form-select {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-2">
+      <a class="navbar-brand" href="#">Developer Nikhitha</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact me">Contact me</a>
+          </li> 
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Alert -->
+    <div class="alert alert-success text-center mt-0" role="alert">
+      Hi visitor! I am looking for a full-time job. Feel free to contact me if you like my profile.
+    </div>
+
+    <!-- Contact Form -->
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Contact me for enquiries</h2>
+      <form class="row g-3" action="contact me" method="post">
+        {% csrf_token %}
+        <!-- Email Field -->
+        <div class="col-md-6">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" id="inputEmail" required>
+        </div>
+        <!-- Name Field -->
+        <div class="col-md-6">
+          <label for="inputName" class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" id="inputName" required>
+        </div>
+        <!-- Phone Field -->
+        <div class="col-md-6">
+          <label for="inputPhone" class="form-label">Phone Number</label>
+          <input type="tel" name="phone" class="form-control" id="inputPhone" required>
+        </div>
+        <!-- Address Field -->
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input type="text" name="address" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
+        </div>
+        <!-- City Field -->
+        <div class="col-md-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input type="text" name="city" class="form-control" id="inputCity" required>
+        </div>
+        <!-- State Field -->
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" name="state" class="form-select" required>
+            <option selected disabled>Choose...</option>
+            <option>AP</option>
+            <option>Telangana</option>
+            <option>Karnataka</option>
+            <option>Tamil Nadu</option>
+            <option>Kerala</option>
+          </select>
+        </div>
+        <!-- Zip Code Field -->
+        <div class="col-md-2">
+          <label for="inputZip" class="form-label">Zip Code</label>
+          <input type="text" name="zip" class="form-control" id="inputZip" required>
+        </div>
+        
+        <!-- Submit Button -->
+        <div class="col-12 text-center">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <p>Copyright &copy; 2024 | All rights reserved</p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
